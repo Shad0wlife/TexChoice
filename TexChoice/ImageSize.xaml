@@ -1,0 +1,21 @@
+﻿<Window x:Class="TexChoice.ImageSize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TexChoice"
+        mc:Ignorable="d"
+        Title="ImageSize" Height="239.892" Width="300">
+    <Grid>
+        <ComboBox Name="ResolutionChoice" Margin="10,41,10,0" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{Binding resolutions}" SelectedItem="{Binding selected}" VerticalAlignment="Top"/>
+        <Button Name="OKButton" Content="OK" Margin="10,0,10,10" VerticalAlignment="Bottom" Height="45" Click="Button_Click"/>
+        <Label Content="Choose Resolution:" Margin="10,10,10,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Compression" HorizontalAlignment="Left" Margin="10,68,0,60" Width="272">
+            <Grid>
+                <RadioButton Name="BC7" Content="BC7 - Better Quality, uses GPU" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" GroupName="BC" IsChecked="True"/>
+                <RadioButton Name="BC3" Content="BC3/DXT5 - More Common" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,34,0,0" GroupName="BC"/>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
